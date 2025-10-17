@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Trips</h1>
+<ul>
+  {% for trip in trips %}
+    <li>{{ trip.title }} — {{ trip.start_date }} to {{ trip.end_date }}</li>
+  {% endfor %}
+</ul>
+<a href="{% url 'events:trip_create' %}">Create trip</a>
+{% endblock %}

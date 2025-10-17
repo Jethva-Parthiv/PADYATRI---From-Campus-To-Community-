@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Padyatri Dashboard</h1>
+<p>Teams: {{ team_count }}</p>
+<p>Participants: {{ participant_count }}</p>
+<h2>Upcoming trips</h2>
+<ul>
+  {% for trip in upcoming_trips %}
+    <li>{{ trip.title }} ({{ trip.start_date }} - {{ trip.end_date }})</li>
+  {% empty %}
+    <li>No upcoming trips</li>
+  {% endfor %}
+</ul>
+{% endblock %}
